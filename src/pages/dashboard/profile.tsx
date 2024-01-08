@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Card,
   CardBody,
@@ -90,8 +91,7 @@ export function Profile() {
                           defaultChecked={checked}
                           labelProps={{
                             className: "text-sm font-normal text-blue-gray-500",
-                          }}
-                        />
+                          }} crossOrigin={undefined}                        />
                       ))}
                     </div>
                   </div>

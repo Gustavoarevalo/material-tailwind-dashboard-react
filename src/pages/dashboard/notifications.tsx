@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import {
   Typography,
   Alert,
@@ -7,21 +7,25 @@ import {
   CardBody,
 } from "@material-tailwind/react";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
+import { ShowAlerts} from "@/Interfaces/showAlerts";
 
 export function Notifications() {
-  const [showAlerts, setShowAlerts] = React.useState({
+  const [showAlerts, setShowAlerts] = useState<ShowAlerts>({
     blue: true,
     green: true,
     orange: true,
     red: true,
   });
-  const [showAlertsWithIcon, setShowAlertsWithIcon] = React.useState({
+  const [showAlertsWithIcon, setShowAlertsWithIcon] =useState<ShowAlerts>({
     blue: true,
     green: true,
     orange: true,
     red: true,
   });
-  const alerts = ["gray", "green", "orange", "red"];
+
+  type AlertColor = "gray" | "green" | "orange" | "red";
+
+  const alerts: AlertColor[]  = ["gray", "green", "orange", "red"];
 
   return (
     <div className="mx-auto my-20 flex max-w-screen-lg flex-col gap-8">
